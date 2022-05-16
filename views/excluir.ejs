@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./header.ejs"); %>
+
+<body>
+    <div class="container card mt-5 p-3">
+      
+        <form action="<%= cliente.CodCli%>" method="post">
+            <legend>Excluir Cliente</legend>
+            <div class="row">
+                <div class="col-2 mb-3">
+                    <label for="codigoInput" class="form-label">Código</label>
+                <input type="text" class="form-control" name="codigo" value="<%= cliente.CodCli %>" disabled>
+                </div>
+                <div class="col mb-3">
+                  <label for="nomeInput" class="form-label">Nome</label>
+                  <input type="text" class="form-control" name="nome" value="<%= cliente.Nome %>"disabled>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="cargoInput" class="form-label">Cargo</label>
+                <input type="text" class="form-control" name="cargo" value="<%= cliente.Cargo %>"disabled>
+            </div>
+            <div class="mb-3">
+                <label for="contato" class="form-label">Contato</label>
+                <input type="text" class="form-control" name="contato" value="<%= cliente.Contato %>"disabled>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <button class="btn btn-primary" type="submit">Excluir cliente</button>
+                </div>
+            </div>
+          </form>
+    </div>
+</body>
+</html>
+
