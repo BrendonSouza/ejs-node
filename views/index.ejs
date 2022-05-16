@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./header.ejs"); %>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>CRUD Node</h1>
+            </div>
+            <div class="col d-flex justify-content-end align-items-center">
+                <a href="/incluir" class="btn btn-primary float-right">
+                    <i class="fas fa-plus"></i>
+                    Incluir
+                </a>
+            </div>
+        </div>
+        <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Cargo</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(const cliente of clientes){ %>
+              <tr>
+                <th class="col-1"><%= cliente.CodCli %></th>
+                <td><%= cliente.Nome %></td>
+                <td><%= cliente.Cargo %></td>
+                <td><%= cliente.Contato %></td>
+                <td>
+                    <a href="/editar/<%= cliente.CodCli%>" class="btn btn-primary float-right">
+                        <i class="fa-solid fa-pencil"></i> 
+                    </a>
+                    <a href="/incluir" class="btn btn-primary float-right">
+                        <i class="fa-solid fa-trash"></i></td>
+                    </a>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+    </div>
+</body>
+</html>

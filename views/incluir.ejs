@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./header.ejs"); %>
+
+<body>
+    <div class="container card mt-5 p-3">
+        <% if(cliente.CodCli){ %>
+            <h1>teste</h1>
+            <form action="<%= cliente.CodCli%>" method="post">
+        <% } else { %>
+           
+            <form action="incluir" method="post">
+        <% } %>
+        
+            <% if(cliente.CodCli){ %>
+                <legend>Editar Cliente</legend>
+            <% } else { %>
+                <legend>Incluir Cliente</legend>
+            <% } %>
+            <div class="row">
+                <div class="col-2 mb-3">
+                    <label for="codigoInput" class="form-label">Código</label>
+                <input type="text" class="form-control" name="codigo" value="<%= cliente.CodCli %>">
+                </div>
+                <div class="col mb-3">
+                  <label for="nomeInput" class="form-label">Nome</label>
+                  <input type="text" class="form-control" name="nome" value="<%= cliente.Nome %>">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="cargoInput" class="form-label">Cargo</label>
+                <input type="text" class="form-control" name="cargo" value="<%= cliente.Cargo %>">
+            </div>
+            <div class="mb-3">
+                <label for="contato" class="form-label">Contato</label>
+                <input type="text" class="form-control" name="contato" value="<%= cliente.Contato %>">
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <button class="btn btn-primary" type="submit">Button</button>
+
+                </div>
+            </div>
+           
+          </form>
+    </div>
+</body>
+</html>
